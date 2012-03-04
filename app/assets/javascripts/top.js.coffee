@@ -2,5 +2,8 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 $ ->
- $("div#canvas").dblclick ->
-   alert("Hello World!")
+  $("div#canvas").dblclick (e) ->
+    canvas = $(e.target)
+    x = e.pageX - canvas.position().left
+    y = e.pageY - canvas.position().top
+    canvas.append("<div class='block' style='left: #{x}px; top: #{y}px;' />")
