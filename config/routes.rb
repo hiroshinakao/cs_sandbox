@@ -1,6 +1,8 @@
 CsSandbox::Application.routes.draw do
   get "top/index"
 
+  resources :blocks, only: [:create]
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
